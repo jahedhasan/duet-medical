@@ -3,7 +3,7 @@
 define('DB_HOST','localhost');
 define('DB_USER','root');
 define('DB_PASS','');
-define('DB_NAME','duet-medical');
+define('DB_NAME','duet_medical');
 // Establish database connection.
 try
 {
