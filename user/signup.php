@@ -19,7 +19,7 @@ $sql="Insert Into tbluser(FullName,MobileNumber,Email,Password)Values(:fname,:mo
 $query = $dbh->prepare($sql);
 $query->bindParam(':fname',$fname,PDO::PARAM_STR);
 $query->bindParam(':email',$email,PDO::PARAM_STR);
-$query->bindParam(':mobno',$mobno,PDO::PARAM_INT);
+$query->bindParam(':mobno',$mobno,PDO::PARAM_STR);
 $query->bindParam(':password',$password,PDO::PARAM_STR);
 $query->execute();
 $lastInsertId = $dbh->lastInsertId();
@@ -47,7 +47,7 @@ echo "<script>alert('Email-id already exist. Please try again');</script>";
 <html lang="en">
 <head>
 	
-	<title>DUET MEDICAL Centre - User Sign Up</title>
+	<title>DUET MEDICAL Center - User Sign Up</title>
 	
 	
 	<link rel="stylesheet" href="libs/bower/font-awesome/css/font-awesome.min.css">
@@ -65,7 +65,7 @@ echo "<script>alert('Email-id already exist. Please try again');</script>";
 	<div class="simple-page-wrap">
 		<div class="simple-page-logo animated swing">
 			
-				<span style="color: white">DUET MEDICAL Centre</span>
+				<span style="color: white">DUET MEDICAL Center</span>
 			
 		</div><!-- logo -->
 		
@@ -80,7 +80,7 @@ echo "<script>alert('Email-id already exist. Please try again');</script>";
 			<input id="email" type="email" class="form-control" placeholder="Email" name="email" required="true">
 		</div>
 		<div class="form-group">
-			<input id="mobno" type="text" class="form-control" placeholder="Mobile" name="mobno" maxlength="11" pattern="[0-9]+" required="true">
+			<input id="mobno" type="text" class="form-control" placeholder="Mobile" name="mobno" maxlength="11"   required="true">
 		</div>
 
 		<div class="form-group">

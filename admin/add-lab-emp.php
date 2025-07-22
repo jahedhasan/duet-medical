@@ -60,7 +60,7 @@ echo "<script>alert('Email-id,Employee Id or Mobile Number already exist. Please
 <html lang="en">
 <head>
   
-  <title>DUET MEDICAL Centre - Add Emplooyee Detail</title>
+  <title>DUET MEDICAL Center - Add Emplooyee Detail</title>
   
   <link rel="stylesheet" href="libs/bower/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="libs/bower/material-design-iconic-font/dist/css/material-design-iconic-font.css">
@@ -116,7 +116,7 @@ echo "<script>alert('Email-id,Employee Id or Mobile Number already exist. Please
               <div class="form-group">
                 <label for="email2" class="col-sm-3 control-label">Mobile Number:</label>
                 <div class="col-sm-9">
-                  <input  type="text" class="form-control" id="email2" name="mobnum" value="" required="true" maxlength="11" pattern="[0-9]+">
+                  <input  type="text" class="form-control" id="email2" name="mobnum" value="" required="true" maxlength="11"  >
                 </div>
               </div>
               <div class="form-group">

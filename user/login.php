@@ -31,7 +31,7 @@ echo "<script>alert('Invalid Details');</script>";
 <html lang="en">
 <head>
 	
-	<title>DUET MEDICAL Centre - Login Page</title>
+	<title>DUET MEDICAL Center - Login Page</title>
 	
 
 	<link rel="stylesheet" href="libs/bower/font-awesome/css/font-awesome.min.css">
@@ -50,11 +50,11 @@ echo "<script>alert('Invalid Details');</script>";
 		<div class="simple-page-logo animated swing">
 			
 				<span style="color: white"><i class="fa fa-gg"></i></span>
-				<span style="color: white">DUET MEDICAL Centre</span>
+				<span style="color: white">DUET MEDICAL Center</span>
 			
 		</div><!-- logo -->
 		<div class="simple-page-form animated flipInY" id="login-form">
-	<h4 class="form-title m-b-xl text-center">Sign In With Your DUET MEDICAL Centre Account</h4>
+	<h4 class="form-title m-b-xl text-center">Sign In With Your DUET MEDICAL Center Account</h4>
 	<form action="#" method="post" name="login">
 		<div class="form-group">
 			<input type="email" class="form-control" placeholder="Email" required="true" name="email">

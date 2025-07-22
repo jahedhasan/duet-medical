@@ -25,7 +25,7 @@ $query->execute();
 <html lang="en">
 <head>
 	
-	<title>DUET MEDICAL Centre || Manage Employee Detail</title>
+	<title>DUET MEDICAL Center || Manage Employee Detail</title>
 	
 	<link rel="stylesheet" href="libs/bower/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="libs/bower/material-design-iconic-font/dist/css/material-design-iconic-font.css">

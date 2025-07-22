@@ -38,7 +38,7 @@ $query->bindParam(':eid',$eid,PDO::PARAM_STR);
 <html lang="en">
 <head>
   
-  <title>DUET MEDICAL Centre - Update Employee Detail</title>
+  <title>DUET MEDICAL Center - Update Employee Detail</title>
   
   <link rel="stylesheet" href="libs/bower/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="libs/bower/material-design-iconic-font/dist/css/material-design-iconic-font.css">

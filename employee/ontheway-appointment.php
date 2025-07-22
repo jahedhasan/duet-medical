@@ -13,7 +13,7 @@ if (strlen($_SESSION['dmeid']==0)) {
 <html lang="en">
 <head>
 	
-	<title>DUET MEDICAL Centre || On the way Appointment Detail</title>
+	<title>DUET MEDICAL Center || On the way Appointment Detail</title>
 	
 	<link rel="stylesheet" href="libs/bower/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="libs/bower/material-design-iconic-font/dist/css/material-design-iconic-font.css">

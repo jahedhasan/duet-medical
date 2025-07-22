@@ -75,7 +75,7 @@ echo '<script>alert("Your Appointment has been taken successfully. Appointment n
 <html lang="en">
 <head>
 	
-	<title>DUET MEDICAL Centre || Appointment Form</title>
+	<title>DUET MEDICAL Center || Appointment Form</title>
 	
 	<link rel="stylesheet" href="libs/bower/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="libs/bower/material-design-iconic-font/dist/css/material-design-iconic-font.css">
@@ -135,7 +135,7 @@ echo '<script>alert("Your Appointment has been taken successfully. Appointment n
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Mobile Number</label>
-                <input type="text" class="form-control" id="mobnum" name="mobnum" maxlength="11" pattern="[0-9]+" required="true">
+                <input type="text" class="form-control" id="mobnum" name="mobnum" maxlength="11"   required="true">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Email ID</label>

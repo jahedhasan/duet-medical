@@ -13,7 +13,7 @@ echo $_SESSION['dmuid'];
 <html lang="en">
 <head>
 	
-	<title>DUET MEDICAL Centre - Dashboard</title>
+	<title>DUET MEDICAL Center - Dashboard</title>
 	
 	<link rel="stylesheet" href="libs/bower/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="libs/bower/material-design-iconic-font/dist/css/material-design-iconic-font.css">
@@ -65,7 +65,7 @@ if($query->rowCount() > 0)
 {
 foreach($results as $row)
 {               ?>
-							<h4 style="color: blue">Welcome to DUET MEDICAL Centre!! <?php  echo $row->FullName;?></h4>
+							<h4 style="color: blue">Welcome to DUET MEDICAL Center!! <?php  echo $row->FullName;?></h4>
 							<?php $cnt=$cnt+1;}} ?>
 						</div>
 					

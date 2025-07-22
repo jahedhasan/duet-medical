@@ -35,7 +35,7 @@ echo "<script>alert('Email id or Mobile no is invalid');</script>";
 <html lang="en">
 <head>
 	
-	<title>DUET MEDICAL Centre - Forgot Page</title>
+	<title>DUET MEDICAL Center - Forgot Page</title>
 	
 
 	<link rel="stylesheet" href="libs/bower/font-awesome/css/font-awesome.min.css">
@@ -66,7 +66,7 @@ return true;
 		<div class="simple-page-logo animated swing">
 			
 				<span style="color: white"><i class="fa fa-gg"></i></span>
-				<span style="color: white">DUET MEDICAL Centre</span>
+				<span style="color: white">DUET MEDICAL Center</span>
 			
 		</div><!-- logo -->
 		<div class="simple-page-form animated flipInY" id="login-form">

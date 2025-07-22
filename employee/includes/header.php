@@ -30,7 +30,7 @@ if (strlen($_SESSION['dmeid']==0)) {
 
     <a href="dashboard.php" class="navbar-brand">
       <span class="brand-icon"><i class="fa fa-gg"></i></span>
-      <span class="brand-name">DUET MEDICAL Centre</span>
+      <span class="brand-name">DUET MEDICAL Center</span>
     </a>
   </div><!-- .navbar-header -->
   

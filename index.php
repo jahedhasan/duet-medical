@@ -29,7 +29,7 @@
 		<div class="header-top">
 			<div class="container">
 			   <div class="logo">
-				  <a href="index.php">DUET MEDICAL<span>Centre</span></a>
+				  <a href="index.php">DUET MEDICAL<span>Center</span></a>
 				</div>
 				<div class="top-menu">
 					<span class="menu"><img src="images/nav.png" alt=""/> </span>

@@ -11,7 +11,7 @@ if (strlen($_SESSION['dmeid']==0)) {
 <html lang="en">
 <head>
   
-  <title>DUET MEDICAL Centre - Sample Collection Report</title>
+  <title>DUET MEDICAL Center - Sample Collection Report</title>
   
   <link rel="stylesheet" href="libs/bower/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="libs/bower/material-design-iconic-font/dist/css/material-design-iconic-font.css">

@@ -35,7 +35,7 @@ echo "<script>alert('Email id or Mobile no is invalid');</script>";
 <html lang="en">
 <head>
 	
-	<title>DUET MEDICAL Centre - Forgot Page</title>
+	<title>DUET MEDICAL Center - Forgot Page</title>
 	
 
 	<link rel="stylesheet" href="libs/bower/font-awesome/css/font-awesome.min.css">
