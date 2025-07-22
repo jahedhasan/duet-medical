@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	
-	<title>Diagnostic - Forgot Page</title>
+	<title>DUET MEDICAL - Forgot Page</title>
 	
 
 	<link rel="stylesheet" href="libs/bower/font-awesome/css/font-awesome.min.css">
@@ -22,7 +22,7 @@
 		<div class="simple-page-logo animated swing">
 			
 				<span style="color: white"><i class="fa fa-gg"></i></span>
-				<span style="color: white">DIAGNOSTIC Centre</span>
+				<span style="color: white">DUET MEDICAL Centre</span>
 			
 		</div><!-- logo -->
 		<div class="simple-page-form " id="login-form">

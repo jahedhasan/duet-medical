@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>DIAGNOSTIC| Home Page</title>
+<title>DUET MEDICAL| Home Page</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 
@@ -124,9 +124,11 @@
 			<center>
 				<h3>Contact Us </h3>
 				<div style="padding: 20px;font-weight: bold;">
+					
+					
 					<p>204003 - Jahed hasan </p>
 					<p>204057 - Sabbir Hossain Sojib</p>
-					<p>204059 - Md. Ayatullah</p>
+					<p>204058 - Md. Ayatullah</p>
 				</div>
 				
 			</center>

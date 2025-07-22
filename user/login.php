@@ -1,3 +1,32 @@
+<?php
+session_start();
+error_reporting(0);
+include('includes/dbconnection.php');
+
+if(isset($_POST['login'])) 
+{
+	$email=$_POST['email'];
+	$password=md5($_POST['password']);
+	$sql ="SELECT ID FROM tbluser WHERE Email=:email and Password=:password";
+	$query=$dbh->prepare($sql);
+	$query->bindParam(':email',$email,PDO::PARAM_STR);
+	$query-> bindParam(':password', $password, PDO::PARAM_STR);
+	$query-> execute();
+	$results=$query->fetchAll(PDO::FETCH_OBJ);
+	if($query->rowCount() > 0)
+	{
+		foreach ($results as $result) {
+			$_SESSION['odlmsuid']=$result->ID;
+		}
+		$_SESSION['login']=$_POST['email'];
+		echo "<script type='text/javascript'> document.location ='dashboard.php'; </script>";
+	} else{
+		echo "<script>alert('Invalid Details');</script>";
+	}
+}
+
+?>
+
 <!doctype html>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,31 +50,31 @@
 	<div class="simple-page-wrap">
 		<div class="simple-page-logo">
 			
-				<span style="color: white"><i class="fa fa-gg"></i></span>
-				<span style="color: white">DIAGNOSTIC Centre</span>
+			<span style="color: white"><i class="fa fa-gg"></i></span>
+			<span style="color: white">DUET MEDICAL Centre</span>
 			
 		</div><!-- logo -->
-		<div class="simple-page-form " id="login-form">
-	<h4 class="form-title m-b-xl text-center">Sign In</h4>
-	<form action="dashboard.php" method="post" name="login">
-		<div class="form-group">
-			<input type="email" class="form-control" placeholder="Email"  name="email">
-		</div>
+		<div class="simple-page-form animated flipInY" id="login-form">
+			<h4 class="form-title m-b-xl text-center">Sign In </h4>
+			<form action="#" method="post" name="login">
+				<div class="form-group">
+					<input type="email" class="form-control" placeholder="Email" required="true" name="email">
+				</div>
 
-		<div class="form-group">
-			<input type="password" class="form-control" placeholder="Password" name="password">
-		</div>
+				<div class="form-group">
+					<input type="password" class="form-control" placeholder="Password" name="password" required="true">
+				</div>
 
-		
-		<input type="submit" class="btn btn-primary" name="login" value="Sign IN">
-	</form>
-</div><!-- #login-form -->
 
-<div class="simple-page-footer">
-	<p><a href="forgot-password.php">FORGOT YOUR PASSWORD ?</a></p>
-	<p><a href="signup.php">Don't have an account ? CREATE AN ACCOUNT ?</a></p>
-	
-</div><!-- .simple-page-footer -->
+				<input type="submit" class="btn btn-primary" name="login" value="Sign IN">
+			</form>
+		</div><!-- #login-form -->
+
+		<div class="simple-page-footer">
+			<p><a href="forgot-password.php">FORGOT YOUR PASSWORD ?</a></p>
+			<p><a href="signup.php">Don't have an account ? CREATE AN ACCOUNT ?</a></p>
+
+		</div><!-- .simple-page-footer -->
 
 
 	</div><!-- .simple-page-wrap -->
