@@ -2,17 +2,18 @@
 session_start();
 error_reporting(0);
 include('includes/dbconnection.php');
-if (strlen($_SESSION['odlmsuid']==0)) {
+if (strlen($_SESSION['dmuid']==0)) {
   header('location:logout.php');
   } else{
 
-echo $_SESSION['odlmsuid'];
+echo $_SESSION['dmuid'];
+
   ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	
-	<title>DUET MEDICAL - Dashboard</title>
+	<title>DUET MEDICAL Centre - Dashboard</title>
 	
 	<link rel="stylesheet" href="libs/bower/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="libs/bower/material-design-iconic-font/dist/css/material-design-iconic-font.css">
@@ -53,18 +54,17 @@ echo $_SESSION['odlmsuid'];
 					<div class="widget-body clearfix">
 						<div class="pull-left">
 							<?php
-								$uid=$_SESSION['odlmsuid'];
-								$sql="SELECT FullName from  tbluser where ID=:uid";
-								$query = $dbh -> prepare($sql);
-								$query->bindParam(':uid',$uid,PDO::PARAM_STR);
-								$query->execute();
-								$results=$query->fetchAll(PDO::FETCH_OBJ);
-								$cnt=1;
-								if($query->rowCount() > 0)
-								{
-								foreach($results as $row)
-								{               
-							?>
+$uid=$_SESSION['dmuid'];
+$sql="SELECT FullName from  tbluser where ID=:uid";
+$query = $dbh -> prepare($sql);
+$query->bindParam(':uid',$uid,PDO::PARAM_STR);
+$query->execute();
+$results=$query->fetchAll(PDO::FETCH_OBJ);
+$cnt=1;
+if($query->rowCount() > 0)
+{
+foreach($results as $row)
+{               ?>
 							<h4 style="color: blue">Welcome to DUET MEDICAL Centre!! <?php  echo $row->FullName;?></h4>
 							<?php $cnt=$cnt+1;}} ?>
 						</div>
@@ -76,12 +76,19 @@ echo $_SESSION['odlmsuid'];
 
 		<div class="row">
 		
-	</section>
-</div>
+	</section><!-- #dash-content -->
+</div><!-- .wrap -->
+  <!-- APP FOOTER -->
+ <?php //include_once('includes/footer.php');?>
+  <!-- /#app-footer -->
 </main>
+<!--========== END app main -->
 
+<?php //include_once('includes/customizer.php');?>
+	
+	
 
-<!-- build:js assets/js/core.min.js -->
+	<!-- build:js assets/js/core.min.js -->
 	<script src="libs/bower/jquery/dist/jquery.js"></script>
 	<script src="libs/bower/jquery-ui/jquery-ui.min.js"></script>
 	<script src="libs/bower/jQuery-Storage-API/jquery.storageapi.min.js"></script>

@@ -1,13 +1,44 @@
+s<?php
+session_start();
+error_reporting(0);
+include('includes/dbconnection.php');
+
+if(isset($_POST['login'])) 
+  {
+    $empid=$_POST['empid'];
+    $password=md5($_POST['password']);
+    $sql ="SELECT ID,EmpID FROM tblemployee WHERE EmpID=:empid and Password=:password";
+    $query=$dbh->prepare($sql);
+    $query->bindParam(':empid',$empid,PDO::PARAM_STR);
+$query-> bindParam(':password', $password, PDO::PARAM_STR);
+    $query-> execute();
+    $results=$query->fetchAll(PDO::FETCH_OBJ);
+    if($query->rowCount() > 0)
+{
+foreach ($results as $result) {
+$_SESSION['dmeid']=$result->ID;
+$_SESSION['odlmsempid']=$result->EmpID;
+
+}
+$_SESSION['login']=$_POST['empid'];
+echo "<script type='text/javascript'> document.location ='dashboard.php'; </script>";
+} else{
+echo "<script>alert('Invalid Details');</script>";
+}
+}
+
+?>
 <!doctype html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	
-	<title>DUET MEDICAL - Login Page</title>
+	<title>DUET MEDICAL Centre - Login Page</title>
 	
 
 	<link rel="stylesheet" href="libs/bower/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="libs/bower/material-design-iconic-font/dist/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" href="libs/bower/animate.css/animate.min.css">
 	<link rel="stylesheet" href="assets/css/bootstrap.css">
 	<link rel="stylesheet" href="assets/css/core.css">
 	<link rel="stylesheet" href="assets/css/misc-pages.css">
@@ -18,14 +49,14 @@
 		<a href="../index.php" class="btn btn-outline btn-default"><i class="fa fa-home animated zoomIn"></i></a>
 	</div>
 	<div class="simple-page-wrap">
-		<div class="simple-page-logo">
+		<div class="simple-page-logo animated swing">
 			
 				<span style="color: white"><i class="fa fa-gg"></i></span>
 				<span style="color: white">DUET MEDICAL Centre</span>
 			
 		</div><!-- logo -->
-		<div class="simple-page-form " id="login-form">
-	<h4 class="form-title m-b-xl text-center">Sign In</h4>
+		<div class="simple-page-form animated flipInY" id="login-form">
+	<h4 class="form-title m-b-xl text-center">Sign In With Your DUET MEDICAL Centre Account</h4>
 	<form action="#" method="post" name="login">
 		<div class="form-group">
 			<input type="text" class="form-control" placeholder="Employee ID" required="true" name="empid">

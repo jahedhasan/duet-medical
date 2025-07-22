@@ -2,7 +2,7 @@
 session_start();
 error_reporting(0);
 include('includes/dbconnection.php');
-if (strlen($_SESSION['odlmsuid']==0)) {
+if (strlen($_SESSION['dmuid']==0)) {
   header('location:logout.php');
   } else{
 
@@ -51,6 +51,41 @@ if (strlen($_SESSION['odlmsuid']==0)) {
         
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-hc-lg zmdi-notifications"></i></a>
+
+
+
+          <div class="media-group dropdown-menu animated flipInY">
+         <?php
+         $uid=$_SESSION['dmuid'];
+$sql="SELECT * from tblappointment  where Status='Report Uploaded' && UserID=:uid";
+$query = $dbh -> prepare($sql);
+$query-> bindParam(':uid', $uid, PDO::PARAM_STR);
+$query->execute();
+$results=$query->fetchAll(PDO::FETCH_OBJ);
+
+$cnt=1;
+$totalappintments=$query->rowCount();
+foreach($results as $row)
+{ 
+
+  ?>
+
+            <a href="view-medicalreport-detail.php?viewid=<?php echo $row->ID;?>&&aptid=<?php echo $row->AppointmentNumber;?>" class="media-group-item">
+              <div class="media">
+                <div class="media-left">
+                  <div class="avatar avatar-xs avatar-circle">
+                    <img src="assets/images/images.png" alt="">
+                    <i class="status status-online"></i>
+                  </div>
+                </div>
+                <div class="media-body">
+                  <h5 class="media-heading">Report Uploaded</h5>
+                  <small class="media-meta"><?php echo $row->AppointmentNumber;?> at (<?php echo $row->ReportUploadedDate;?>)</small>
+                </div>
+              </div>
+            </a><!-- .media-group-item -->
+        <?php  } ?>
+          </div>
         </li>
 
         <li class="dropdown">

@@ -2,7 +2,7 @@
 session_start();
 error_reporting(0);
 include('includes/dbconnection.php');
-if (strlen($_SESSION['odlmsuid']==0)) {
+if (strlen($_SESSION['dmuid']==0)) {
   header('location:logout.php');
   } else{
 
@@ -13,7 +13,7 @@ if (strlen($_SESSION['odlmsuid']==0)) {
 <html lang="en">
 <head>
 	
-	<title> Search Appointment Detail</title>
+	<title>DUET MEDICAL Centre|| Search Appointment Detail</title>
 	
 	<link rel="stylesheet" href="libs/bower/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="libs/bower/material-design-iconic-font/dist/css/material-design-iconic-font.css">
@@ -61,8 +61,88 @@ if (strlen($_SESSION['odlmsuid']==0)) {
                                 <button type="submit" class="btn btn-primary" name="search" id="submit">Search</button>
                             </form>
 					</header><!-- .widget-header -->
-				</div>
-			</div>
+					 <?php
+if(isset($_POST['search']))
+{ 
+
+$sdata=$_POST['searchdata'];
+  ?>
+  <h4 align="center">Result against "<?php echo $sdata;?>" keyword </h4>
+					
+					<div class="widget-body">
+						<div class="table-responsive">
+							<table class="table table-bordered table-hover js-basic-example dataTable table-custom">
+								<thead>
+									<tr>
+										<th>S.No</th>
+										<th>Appointment Number</th>
+										<th>Patient Name</th>
+										<th>Mobile Number</th>
+										<th>Email</th>
+										<th>Status</th>
+										<th>Action</th>
+										
+									</tr>
+								</thead>
+							
+								<tbody>
+                  <?php
+                  $uid=$_SESSION['dmuid'];
+$sql="SELECT * from tblappointment where AppointmentNumber like '$sdata%' || PatientName like '$sdata%' || MobileNumber like '$sdata%' && UserID=:uid";
+$query = $dbh -> prepare($sql);
+$query-> bindParam(':uid', $uid, PDO::PARAM_STR);
+$query->execute();
+$results=$query->fetchAll(PDO::FETCH_OBJ);
+
+$cnt=1;
+if($query->rowCount() > 0)
+{
+foreach($results as $row)
+{               ?>
+									<tr>
+										<td><?php echo htmlentities($cnt);?></td>
+										<td><?php  echo htmlentities($row->AppointmentNumber);?></td>
+										<td><?php  echo htmlentities($row->PatientName);?></td>
+										<td><?php  echo htmlentities($row->MobileNumber);?></td>
+										<td><?php  echo htmlentities($row->Email);?></td>
+										<?php if($row->Status==""){ ?>
+
+                     <td><?php echo "Not Updated Yet"; ?></td>
+<?php } else { ?>                  <td><?php  echo htmlentities($row->Status);?>
+                  </td>
+                  <?php } ?>
+										<td><a href="view-appointment-detail.php?viewid=<?php echo htmlentities ($row->ID);?>&&aptid=<?php echo htmlentities ($row->AppointmentNumber);?>"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
+									</tr>
+								 
+	
+								</tbody>
+                  <tfoot>
+                  	
+                  <tr>
+                   <th>S.No</th>
+										<th>Appointment Number</th>
+										<th>Patient Name</th>
+										<th>Mobile Number</th>
+										<th>Email</th>
+										<th>Status</th>
+										<th>Action</th>
+                  </tr>
+                </tfoot>
+                <?php 
+$cnt=$cnt+1;
+} } else { ?>
+  <tr>
+    <td colspan="8"> No record found against this search</td>
+
+  </tr>
+  <?php } }?> 
+                 
+							</table>
+						</div>
+					</div><!-- .widget-body -->
+				</div><!-- .widget -->
+			</div><!-- END column -->
+			
 			
 		</div><!-- .row -->
 	</section><!-- .app-content -->
@@ -73,6 +153,8 @@ if (strlen($_SESSION['odlmsuid']==0)) {
 </main>
 <!--========== END app main -->
 
+	<!-- APP CUSTOMIZER -->
+<?php include_once('includes/customizer.php');?>
 
 	
 		<!-- build:js assets/js/core.min.js -->

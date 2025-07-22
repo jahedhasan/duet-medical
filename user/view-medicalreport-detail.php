@@ -2,7 +2,7 @@
 session_start();
 error_reporting(0);
 include('includes/dbconnection.php');
-if (strlen($_SESSION['odlmsuid']==0)) {
+if (strlen($_SESSION['dmuid']==0)) {
   header('location:logout.php');
   } else{
 
@@ -13,7 +13,7 @@ if (strlen($_SESSION['odlmsuid']==0)) {
 <html lang="en">
 <head>
 	
-	<title>MTM LAB|| View Medical Report</title>
+	<title>DUET MEDICAL Centre|| View Medical Report</title>
 	
 	<link rel="stylesheet" href="libs/bower/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="libs/bower/material-design-iconic-font/dist/css/material-design-iconic-font.css">
@@ -162,7 +162,7 @@ echo "NA";
 <br>
 <h4 style="color: blue">Test Detail</h4>
 <?php
-$uid=$_SESSION['odlmsuid'];
+$uid=$_SESSION['dmuid'];
 
                
 $sql="SELECT tbllabtest.TestTitle,tbllabtest.TestDescription,tbllabtest.TestInterpretation,tbllabtest.Price,tblappointment.UserID,tblappointment.AppointmentNumber,  tbltestrequest.AppointmentNumber, tbltestrequest.TestID from tblappointment join tbltestrequest on tblappointment.AppointmentNumber= tbltestrequest.AppointmentNumber join tbllabtest on tbllabtest.ID=tbltestrequest.TestID  where tbltestrequest.AppointmentNumber=:aptno";

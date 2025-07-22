@@ -2,12 +2,12 @@
 session_start();
 error_reporting(0);
 include('includes/dbconnection.php');
-if (strlen($_SESSION['odlmsuid']==0)) {
+if (strlen($_SESSION['dmuid']==0)) {
   header('location:logout.php');
   } else{
     if(isset($_POST['submit']))
   {
-    $uid=$_SESSION['odlmsuid'];
+    $uid=$_SESSION['dmuid'];
     $AName=$_POST['name'];
   $mobno=$_POST['mobilenumber'];
   $email=$_POST['email'];
@@ -28,7 +28,7 @@ $query->execute();
 <html lang="en">
 <head>
   
-  <title>MTM LAB - User Profile</title>
+  <title>DUET MEDICAL Centre - User Profile</title>
   
   <link rel="stylesheet" href="libs/bower/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="libs/bower/material-design-iconic-font/dist/css/material-design-iconic-font.css">
@@ -68,7 +68,7 @@ $query->execute();
           <hr class="widget-separator">
           <div class="widget-body">
             <?php
-$uid=$_SESSION['odlmsuid'];
+$uid=$_SESSION['dmuid'];
 $sql="SELECT * from  tbluser where ID=:uid";
 $query = $dbh -> prepare($sql);
 $query->bindParam(':uid',$uid,PDO::PARAM_STR);

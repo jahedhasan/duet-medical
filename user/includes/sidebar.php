@@ -8,18 +8,18 @@
       </div>
       <div class="media-body">
         <div class="foldable">
-            <?php
-            $uid=$_SESSION['odlmsuid'];
-            $sql="SELECT FullName,Email from  tbluser where ID=:uid";
-            $query = $dbh -> prepare($sql);
-            $query->bindParam(':uid',$uid,PDO::PARAM_STR);
-            $query->execute();
-            $results=$query->fetchAll(PDO::FETCH_OBJ);
-            $cnt=1;
-            if($query->rowCount() > 0)
-            {
-            foreach($results as $row)
-            {               ?>
+          <?php
+$uid=$_SESSION['dmuid'];
+$sql="SELECT FullName,Email from  tbluser where ID=:uid";
+$query = $dbh -> prepare($sql);
+$query->bindParam(':uid',$uid,PDO::PARAM_STR);
+$query->execute();
+$results=$query->fetchAll(PDO::FETCH_OBJ);
+$cnt=1;
+if($query->rowCount() > 0)
+{
+foreach($results as $row)
+{               ?>
           <h5><a href="javascript:void(0)" class="username"><?php  echo $row->FullName;?></a></h5><?php $cnt=$cnt+1;}} ?>
           <ul>
             <li class="dropdown">

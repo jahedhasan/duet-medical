@@ -3,12 +3,12 @@ session_start();
 error_reporting(0);
 include('includes/dbconnection.php');
 error_reporting(0);
-if (strlen($_SESSION['odlmsuid']==0)) {
+if (strlen($_SESSION['dmuid']==0)) {
   header('location:logout.php');
   } else{
 if(isset($_POST['submit']))
 {
-$uid=$_SESSION['odlmsuid'];
+$uid=$_SESSION['dmuid'];
 $cpassword=md5($_POST['currentpassword']);
 $newpassword=md5($_POST['newpassword']);
 $sql ="SELECT ID FROM tbluser WHERE ID=:uid and Password=:cpassword";
@@ -42,7 +42,7 @@ echo '<script>alert("Your current password is wrong")</script>';
 <html lang="en">
 <head>
   
-  <title>MTM LAB - Change Password</title>
+  <title>DUET MEDICAL Centre - Change Password</title>
   
   <link rel="stylesheet" href="libs/bower/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="libs/bower/material-design-iconic-font/dist/css/material-design-iconic-font.css">

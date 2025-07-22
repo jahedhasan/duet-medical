@@ -51,7 +51,7 @@ body{
 }
 .header-top {
   padding: 1.5em 0;
-  background: #fee200;
+  background: #019b4d;
  }
 .logo{
 	float: left;
@@ -79,7 +79,7 @@ body{
 	margin: 0 0.5em;
 }
 .top-menu ul li a {
-  color: #AB9A0C;
+  color: white;
   text-decoration: none;
   font-size: 1.1em;
   text-transform: capitalize;
@@ -198,7 +198,7 @@ span.glyphicon.glyphicon-pushpin {
 }
 .gallery {
   padding: 4em 0;
-  background:#fee200;
+  background:#019b4d;
   }
 .da-thumbs {
 	list-style: none;
@@ -273,7 +273,7 @@ span.glyphicon.glyphicon-pushpin {
 	display: block;
 }
 .captn h4 {
-  color: #fee200;
+  color: #019b4d;
   font-family: 'Play-Regular';
   margin: .1em 0 0;
   font-size: 2em;
@@ -310,7 +310,7 @@ span.glyphicon.glyphicon-pushpin {
 }
 /*--blog--*/
 .blog {
-  background: #fee200;
+  background: #019b4d;
 }
 .blog-section{
      padding: 3em 0 4em 0;
@@ -370,7 +370,7 @@ img.zoom-img {
 	color:#000;
 }
 .blog-text {
-  background: #fee200;
+  background: #019b4d;
   width: 40%;
   margin: 0 auto;
   text-align: center;
@@ -421,7 +421,7 @@ img.zoom-img {
   margin-top: 3em;
 }
 .contactdetails-grid h5 span {
-	color: #fee200;
+	color: #019b4d;
 }
 .contactdetails-grid h4 {
    font-size: 1.5em;
@@ -473,12 +473,12 @@ img.zoom-img {
 	padding: 10px 25px;
 	font-size: 1em;
 	margin: 8px 55px 0 0;
-	color: #7F772D;
+	color: white;
 	font-weight: 400;
 	border: none;
 	outline: none;
 	text-transform:capitalize;
-	background: #fee200;
+	background: #019b4d;
 }
 .contactdetails-grid input[type="submit"]:hover {
 	background:#fff;
@@ -513,19 +513,19 @@ img.zoom-img {
 .footer-section{
 	padding:2em 0;
 	text-align:center;
-	background:#fee200;
+	background:#019b4d;
 }
 .footer-bottom {
 	margin-top: 1em;
 }
 .footer-bottom p {
 	font-size: 0.9em;
-	color: #7F772D;
+	color: white;
 	font-weight: 400;
 }
 .footer-bottom a {
 	font-size: 1em;
-	color:#7F772D;
+	color:white;
 	font-weight: 400;
 	text-transform: capitalize;
 	
@@ -604,7 +604,7 @@ img.zoom-img {
 	background:#F4F4F4;
 }
 .men{	
-	background:#fee200;
+	background:#019b4d;
 	float: left;
 	width: 9%;
 	text-align: center;
@@ -644,7 +644,7 @@ p.smith a{
 p.smith  span{
 	font-weight: 400;
   padding: 0 2em;
-  color: #7F772D;
+  color: white;
 }
 .top-in{
 	background:#f8f8f8;
@@ -690,8 +690,8 @@ p.reply a{
   width: 10%;
 }
 .leave input[type="submit"]:hover{
-   background:#fee200;
-   color:#7F772D;
+   background:#019b4d;
+   color:white;
 }
 .leave textarea {
   resize: none;
@@ -781,10 +781,10 @@ span.menu{
     margin-top: 1.5em;
 }
 .top-menu ul li a.active {
-  color: #fee200;
+  color: #019b4d;
 }
 .top-menu ul li a:hover {
-  color: #fee200;
+  color: #019b4d;
 }
 .header-top {
     padding: 0em 0;

@@ -2,7 +2,7 @@
     <footer class="app-footer">
       <div class="clearfix">
         
-        <div class="copyright pull-left">Jahed Sanir Sojib Mahedi @ all rights reserved.</div>
+        <div class="copyright pull-left">Jahed, Sojib, Ayatullah @ all rights reserved.</div>
       </div>
     </footer>
   </div>

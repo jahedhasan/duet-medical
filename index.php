@@ -84,32 +84,32 @@
 		<div class="container">
 			<h3>gallery</h3>
 			<div class="row" style="margin-top: 10px">
-			  <div class="col-md-4">
+			  <div class="col-md-4 col-sm-6">
 			    <div class="thumbnail">
 			        <img src="images/g1.jpg" alt="Lights" style="width:100%">
 			    </div>
 			  </div>
-			  <div class="col-md-4">
+			  <div class="col-md-4 col-sm-6">
 			    <div class="thumbnail">
 			        <img src="images/g2.jpg" alt="Nature" style="width:100%">
 			    </div>
 			  </div>
-			  <div class="col-md-4">
+			  <div class="col-md-4 col-sm-6">
 			    <div class="thumbnail">
 			        <img src="images/g3.jpg" alt="Fjords" style="width:100%">
 			    </div>
 			  </div>
-			  <div class="col-md-4">
+			  <div class="col-md-4 col-sm-6">
 			    <div class="thumbnail">
 			        <img src="images/g4.jpg" alt="Fjords" style="width:100%">
 			    </div>
 			  </div>
-			  <div class="col-md-4">
+			  <div class="col-md-4 col-sm-6">
 			    <div class="thumbnail">
 			        <img src="images/g5.jpg" alt="Fjords" style="width:100%">
 			    </div>
 			  </div>
-			  <div class="col-md-4">
+			  <div class="col-md-4 col-sm-6">
 			    <div class="thumbnail">
 			        <img src="images/g6.jpg" alt="Fjords" style="width:100%">
 			    </div>
@@ -122,15 +122,7 @@
 <div class="contact_us" id="contactus">
 		<div class="container">
 			<center>
-				<h3>Contact Us </h3>
-				<div style="padding: 20px;font-weight: bold;">
-					
-					
-					<p>204003 - Jahed hasan </p>
-					<p>204057 - Sabbir Hossain Sojib</p>
-					<p>204058 - Md. Ayatullah</p>
-				</div>
-				
+				 <img src="images/contact-us.png" alt="contact" style="width:60%">
 			</center>
         </div>
 	</div>

@@ -3,42 +3,42 @@ session_start();
 error_reporting(0);
 include('includes/dbconnection.php');
 if(isset($_POST['submit']))
+  {
+    $fname=$_POST['fname'];
+    $mobno=$_POST['mobno'];
+    $email=$_POST['email'];
+    $password=md5($_POST['password']);
+    $ret="select Email from tbluser where Email=:email";
+    $query= $dbh -> prepare($ret);
+    $query-> bindParam(':email', $email, PDO::PARAM_STR);
+    $query-> execute();
+    $results = $query -> fetchAll(PDO::FETCH_OBJ);
+if($query -> rowCount() == 0)
 {
-	    $fname=$_POST['fname'];
-	    $mobno=$_POST['mobno'];
-	    $email=$_POST['email'];
-	    $password=md5($_POST['password']);
-	    $ret="select Email from tbluser where Email=:email";
-	    $query= $dbh -> prepare($ret);
-	    $query-> bindParam(':email', $email, PDO::PARAM_STR);
-	    $query-> execute();
-	    $results = $query -> fetchAll(PDO::FETCH_OBJ);
-	if($query -> rowCount() == 0)
-	{
-		$sql="Insert Into tbluser(FullName,MobileNumber,Email,Password)Values(:fname,:mobno,:email,:password)";
-		$query = $dbh->prepare($sql);
-		$query->bindParam(':fname',$fname,PDO::PARAM_STR);
-		$query->bindParam(':email',$email,PDO::PARAM_STR);
-		$query->bindParam(':mobno',$mobno,PDO::PARAM_INT);
-		$query->bindParam(':password',$password,PDO::PARAM_STR);
-		$query->execute();
-		$lastInsertId = $dbh->lastInsertId();
-		if($lastInsertId)
-		{
+$sql="Insert Into tbluser(FullName,MobileNumber,Email,Password)Values(:fname,:mobno,:email,:password)";
+$query = $dbh->prepare($sql);
+$query->bindParam(':fname',$fname,PDO::PARAM_STR);
+$query->bindParam(':email',$email,PDO::PARAM_STR);
+$query->bindParam(':mobno',$mobno,PDO::PARAM_INT);
+$query->bindParam(':password',$password,PDO::PARAM_STR);
+$query->execute();
+$lastInsertId = $dbh->lastInsertId();
+if($lastInsertId)
+{
 
-			echo "<script>alert('You have signup  Scuccessfully');</script>";
-		}
-		else
-		{
+echo "<script>alert('You have signup  Scuccessfully');</script>";
+}
+else
+{
 
-			echo "<script>alert('Something went wrong.Please try again');</script>";
-		}
-	}
-	 else
-	{
+echo "<script>alert('Something went wrong.Please try again');</script>";
+}
+}
+ else
+{
 
-		echo "<script>alert('Email-id already exist. Please try again');</script>";
-	}
+echo "<script>alert('Email-id already exist. Please try again');</script>";
+}
 }
 
 
@@ -47,7 +47,8 @@ if(isset($_POST['submit']))
 <html lang="en">
 <head>
 	
-	<title>Diognostic Centre - User Sign Up</title>
+	<title>DUET MEDICAL Centre - User Sign Up</title>
+	
 	
 	<link rel="stylesheet" href="libs/bower/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="libs/bower/material-design-iconic-font/dist/css/material-design-iconic-font.min.css">
@@ -62,13 +63,13 @@ if(isset($_POST['submit']))
 		<a href="../index.php" class="btn btn-outline btn-default"><i class="fa fa-home animated zoomIn"></i></a>
 	</div>
 	<div class="simple-page-wrap">
-		<div class="simple-page-logo">
+		<div class="simple-page-logo animated swing">
 			
 				<span style="color: white">DUET MEDICAL Centre</span>
 			
 		</div><!-- logo -->
 		
-<div class="simple-page-form" id="signup-form">
+<div class="simple-page-form animated flipInY" id="signup-form">
 	<h4 class="form-title m-b-xl text-center">Sign Up For a new Account</h4>
 	<form action="" method="post">
 		<div class="form-group">
