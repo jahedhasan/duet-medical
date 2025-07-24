@@ -295,35 +295,35 @@ if ($status=="Delivered to Lab"){
 
                                 <form method="post" name="submit" enctype="multipart/form-data">
 
+                                                                
+                                                              
+                                    <tr>
+                                    <th>Remark :</th>
+                                    <td>
+                                    <textarea type="text" name="remark" placeholder="Remark" rows="12" cols="14" class="form-control wd-450" required="true"></textarea></td>
+                                  </tr> 
+                                    <tr>
+                                    <th>Upload Report :</th>
+                                    <td><input type="file" name="report" class="form-control wd-450" required="true">
+                                    </td>
+                                  </tr> 
                                 
-                               
-     <tr>
-    <th>Remark :</th>
-    <td>
-    <textarea type="text" name="remark" placeholder="Remark" rows="12" cols="14" class="form-control wd-450" required="true"></textarea></td>
-  </tr> 
-    <tr>
-    <th>Upload Report :</th>
-    <td><input type="file" name="report" class="form-control wd-450" required="true">
-    </td>
-  </tr> 
- 
-  <tr>
-    <th>Status :</th>
-    <td>
+                                  <tr>
+                                    <th>Status :</th>
+                                    <td>
 
-   <select name="status" class="form-control wd-450" required="true" >
-     <option value="Report Uploaded" selected="true">Report Uploaded</option>
-     
-   </select></td>
-  </tr>
-</table>
-</div>
-<div class="modal-footer">
- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
- <button type="submit" name="submit" class="btn btn-primary">Update</button>
-  
-  </form>
+                                  <select name="status" class="form-control wd-450" required="true" >
+                                    <option value="Report Uploaded" selected="true">Report Uploaded</option>
+                                    
+                                  </select></td>
+                                  </tr>
+                                </table>
+                                </div>
+                                  <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  <button type="submit" name="submit" class="btn btn-primary">Update</button>
+                                  
+                                 </form>
   
 
 </div>
